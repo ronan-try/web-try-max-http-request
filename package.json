@@ -1,0 +1,22 @@
+{
+  "name": "web-try-max-http-request",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronan-try/web-try-max-http-request.git"
+  },
+  "author": "ronan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronan-try/web-try-max-http-request/issues"
+  },
+  "homepage": "https://github.com/ronan-try/web-try-max-http-request#readme",
+  "dependencies": {
+    "axios": "^0.21.0"
+  }
+}
