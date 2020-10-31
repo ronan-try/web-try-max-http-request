@@ -5,7 +5,7 @@ onmessage = function (e) {
     console.group();
     console.log(e.data);
     
-    let len = 10;
+    let len = 100;
     const API = 'http://localhost:3000';
     let times = 0;
     while (len) {
