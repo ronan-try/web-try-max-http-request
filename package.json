@@ -2,9 +2,8 @@
   "name": "web-try-max-http-request",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server",
+    "start": "webpack serve --open 8080",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack"
   },
@@ -19,8 +18,7 @@
   },
   "homepage": "https://github.com/ronan-try/web-try-max-http-request#readme",
   "dependencies": {
-    "axios": "^0.21.0",
-    "webpack-dev-server": "^3.11.0"
+    "axios": "^0.21.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -34,6 +32,7 @@
     "style-loader": "^2.0.0",
     "terser-webpack-plugin": "^5.0.3",
     "webpack": "^5.3.2",
-    "webpack-cli": "^4.1.0"
+    "webpack-cli": "^4.1.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }

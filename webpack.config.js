@@ -34,6 +34,11 @@ module.exports = {
   mode: 'development',
   plugins: [new webpack.ProgressPlugin()],
 
+  entry: path.join(__dirname, 'src/index.js'),
+  devServer: {
+    contentBase: path.join(__dirname, 'src'),
+  },
+
   module: {
     rules: [{
       test: /\.(js|jsx)$/,
@@ -63,18 +68,18 @@ module.exports = {
   optimization: {
     minimizer: [new TerserPlugin()],
 
-    splitChunks: {
-      cacheGroups: {
-        vendors: {
-          priority: -10,
-          test: /[\\/]node_modules[\\/]/
-        }
-      },
+    // splitChunks: {
+    //   cacheGroups: {
+    //     vendors: {
+    //       priority: -10,
+    //       test: /[\\/]node_modules[\\/]/
+    //     }
+    //   },
 
-      chunks: 'async',
-      minChunks: 1,
-      minSize: 30000,
-      name: true
-    }
+    //   chunks: 'async',
+    //   minChunks: 1,
+    //   minSize: 30000,
+    //   name: true
+    // }
   }
 }
