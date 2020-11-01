@@ -12,8 +12,9 @@ app.use(async (ctx, next) => {
 
 app.use(async ctx => {
     await new Promise(resolve => {
-        setTimeout(resolve, 1000 * 5)
+        setTimeout(resolve, 1000 * 0.4)
     })
+    console.log(ctx.request.querystring);
     ctx.body = 'hello koa'
 })
 

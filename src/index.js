@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const API = 'http://localhost:3000';
-const Total = 100 * 50 * 0.2 * 0.1 * 0.1;
+const Total = 100 * 50 * 1.5;
 const BaseLen = 100;
 const DoneItems = [];
 
@@ -42,7 +42,7 @@ function foo () {
 function todo () {
     setTimeout(() => {
         foo()
-    }, 1000 * 2)
+    }, 1000 * 2 * 0)
 }
 
 // todo()
@@ -58,17 +58,21 @@ console.log('Hello World from your main file!')
 
 
 const elBtnWorker = document.querySelector('#btn_worker');
-const myWorker = new Worker('other.js');
-const myWorker2 = new Worker('other.js');
+let myWorker = null;
+let myWorker2 = null;
 elBtnWorker.addEventListener('click', () => {
-    myWorker.postMessage(10);
+    myWorker = myWorker || new Worker('other.js');
+    // myWorker2 = myWorker2 || new Worker('other.js');
+
+    myWorker.postMessage(Total);
     myWorker.onmessage = function(e) {
         const i = e.data;
         elStart.textContent = '+' + i;
         elProgress.style.width = i / Total * 100 + '%';
     }
-    // myWorker2.postMessage(10);
-    // myWorker2.onmessage = function(e) {
-    //     console.log(e.data);
-    // }
+    if (!myWorker2) return;
+    myWorker2.postMessage(500);
+    myWorker2.onmessage = function(e) {
+        console.log(e.data);
+    }
 });
