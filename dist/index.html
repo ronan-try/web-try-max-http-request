@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    #cur {
+      width: 4em;
+      display: inline-block;
+      animation: myfirst 4s infinite;
+    }
+    #animate {
+      width: 100px;
+      height: 100px;
+      background: red;
+    }
+
+    #animate:hover {
+      animation: myfirst 3s;
+    }
+
+    @keyframes myfirst {
+      from {
+        transform: translate(0, 0);
+      }
+
+      to {
+        transform: translate(90vw, 0);
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div style="text-align: center;">
+    <button id="btn">Web Go</button>
+    <button id="btn_worker">Worker Go</button>
+  </div>
+
+  <span id="cur">>></span>
+  <div style="display: flex; margin:10px 30px;">
+    <span id="start" style="flex-basis:2em;">0</span>
+    <div style="flex:1; background-color: darkgray;">
+      <div id="progress" style="display: inline-block; background-color: darkmagenta;">&nbsp;</div>
+    </div>
+    <span id="end" style="flex-basis:2em;">0</span>
+  </div>
+  <div id="animate">&nbsp;</div>
+  <script src="./app.js"></script>
+</body>
+
+</html>

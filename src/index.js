@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 const API = 'http://localhost:3000';
-const Total = 100 * 50 * 1.5;
-const BaseLen = 100;
+const Total = 100 * 50 * 0.4;
+const BaseLen = 30;
 const DoneItems = [];
 
 const elStart = document.querySelector('#start');
@@ -42,13 +42,14 @@ function foo () {
 function todo () {
     setTimeout(() => {
         foo()
-    }, 1000 * 2 * 0)
+    }, 200 * 0)
 }
 
 // todo()
 let locked = false;
 document.querySelector('#btn').addEventListener('click', () => {
     if (locked) return;
+    document.querySelector('#cur').textContent = 'web go';
     locked = true;
     console.warn('firing')
     todo();
@@ -61,6 +62,10 @@ const elBtnWorker = document.querySelector('#btn_worker');
 let myWorker = null;
 let myWorker2 = null;
 elBtnWorker.addEventListener('click', () => {
+    if (locked) return;
+    document.querySelector('#cur').textContent = 'worker go';
+    locked = true;
+
     myWorker = myWorker || new Worker('other.js');
     // myWorker2 = myWorker2 || new Worker('other.js');
 

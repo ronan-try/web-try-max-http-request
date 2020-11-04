@@ -1,15 +1,16 @@
 # 🚀 Welcome to your new awesome project!
 
-This project has been created using **webpack scaffold**, you can now run
+接口<500ms  条数1,000  总请求2 * 1,000
+===================================
+Web:     耗时 <3m
+Worker:  耗时 <3m
 
-```
-npm run build
-```
+接口<500ms  条数2,000  总请求2 * 2,000
+===================================
+Web:     耗时 <5m
+Worker:  耗时 <5m
 
-or
-
-```
-yarn build
-```
-
-to bundle your application
+接口<500ms  条数5,000  总请求2 * 5,000
+===================================
+Web:     耗时 <13m
+Worker:  耗时 <13m
