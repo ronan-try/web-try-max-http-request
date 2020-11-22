@@ -21,11 +21,24 @@ module.exports = {
   },
 
   module: {
-    rules: [{
+    rules: [
+      {
       test: /\.(js|jsx)$/,
       include: [path.resolve(__dirname, 'src')],
       loader: 'babel-loader'
-    }, {
+      },
+      {
+        test: /\.worker\.js$/,
+        use: [
+          {
+            loader: 'worker-loader',
+            options: {
+              inline: 'fallback',
+            },
+          },
+        ]
+      },
+      {
       test: /.(scss|css)$/,
 
       use: [{

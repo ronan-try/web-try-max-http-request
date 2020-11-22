@@ -20,7 +20,8 @@
   "dependencies": {
     "axios": "^0.21.0",
     "koa": "^2.13.0",
-    "koa2-cors": "^2.0.6"
+    "koa2-cors": "^2.0.6",
+    "worker-loader": "^3.0.5"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",

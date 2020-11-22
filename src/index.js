@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Worker from './a.worker';
 
 const API = 'http://localhost:3000';
 const Total = 100 * 50 * 0.4;
